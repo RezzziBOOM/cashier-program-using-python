@@ -1,3 +1,5 @@
+import datetime
+
 print("----------------- SELAMAT DATANG -----------------")
 print("==================================================")
 print("----------- PROGRAM CASHIER REZZI BOOM -----------")
@@ -127,6 +129,7 @@ print("\nTotal harus Dibayar: Rp", totalsemua)
 uang = int(input("Uang Tunai Pembeli: Rp "))
 kembalian = int(uang - totalsemua)
 print("Kembalian :", kembalian)
+tanggal_sekarang = datetime.datetime.now()
 
 print("\n==================================")
 print("============== C E T A K ===============")
@@ -136,6 +139,7 @@ print("Id Kasir\t:", id_kasir)
 print("==================================")
 print("==================================")
 print("Pembeli\t\t:", pembeli)
+print("Tanggal\t\t:", tanggal_sekarang.strftime("%Y-%m-%d %H:%M:%S"))
 print("==================================")
 print("==================================")
 
