@@ -34,6 +34,10 @@ Kode |      Menu Makanan     |       Harga      |
         nomor = int(input("Masukkan Pilihan: "))
         porsi = int(input("Masukkan Jumlah Porsi: "))
 
+        if porsi <= 0:
+            print("Jumlah porsi harus lebih besar dari nol.")
+            continue
+        
         if nomor == 1:
             totalmkn = porsi * 20000
             print(porsi, " Porsi Lele Goreng = Rp", totalmkn)
@@ -82,6 +86,10 @@ Kode |      Menu Minuman      |       Harga      |
         nomor = int(input("Masukkan Pilihan: "))
         gelas = int(input("Masukkan Jumlah Gelas: "))
 
+        if gelas <= 0:
+            print("Jumlah porsi harus lebih besar dari nol.")
+            continue
+        
         if nomor == 1:
             totalmnm = gelas * 5000
             print(gelas, " Gelas Es Teh Manis = Rp", totalmnm)
@@ -127,6 +135,10 @@ totalsemua = sum([harga for _, _, harga in pesanan_makanan + pesanan_minuman])
 
 print("\nTotal harus Dibayar: Rp", totalsemua)
 uang = int(input("Uang Tunai Pembeli: Rp "))
+# Validasi jumlah uang pembayaran
+while uang < totalsemua:
+    print("Uang yang dibayarkan kurang dari total tagihan. Silakan masukkan jumlah uang yang cukup.")
+    uang = int(input("Uang Tunai Pembeli: Rp "))
 kembalian = int(uang - totalsemua)
 print("Kembalian :", kembalian)
 tanggal_sekarang = datetime.datetime.now()
